@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+
+/* Var */
+/* --- */
+
+:root {
+  /* Colors vars */
+  /* ----------- */
+
+  --text-color: #1b2631;
+  --background-color: #ecf0f1;
+  --section-color: #d7dbdd;
+  --dark-color: #17202a;
+
+  /* Fonts vars */
+  /* ---------- */
+
+  --text-font: "Source Sans Pro", sans-serif;
+}
+
+/* Animations */
+/* ---------- */
+
+/* Global Style */
+/* ------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-color);
+  background: var(--background-color);
+  font-family: var(--text-font);
+  width: 100%;
+  min-width: 320px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--dark-color);
+  opacity: 33%;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Text Style */
+/* ---------- */
+
+p {
+  font-size: 1.4rem;
+}
+
+a {
+  font-size: 1.4rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Section Style */
+/* ------------- */
+
+.section {
+  padding: 4rem 2rem;
+}
+
+.section__title {
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    padding: 5rem 2rem;
+  }
+  .section__title {
+    text-align: left;
+  }
+}
+
+/* Header */
+/* ------ */
+
+.small-body {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  background: var(--section-color);
+  height: 6rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 5;
+}
+
+.header-logo__title {
+  font-size: 2.5rem;
+}
+
+.header-navbar {
+  background: var(--section-color);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: -50rem;
+  transition: 500ms;
+}
+
+.menu-active {
+  top: 6rem;
+}
+
+.header-navbar__list {
+  padding: 4rem 2rem;
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+}
+
+.header-navbar__list li a {
+  font-size: 1.5rem;
+}
+
+.header-button__btn {
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .header-navbar {
+    position: static;
+    width: auto;
+    left: initial;
+    top: initial;
+    transition: none;
+  }
+
+  .header-navbar__list {
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+    justify-items: center;
+  }
+  .menu-active {
+    top: initial;
+  }
+
+  .header-button {
+    display: none;
+  }
+}
+
+/* Main Section */
+/* ------------ */
+
+.main {
+  min-height: calc(100vh - 6rem);
+}
+
+/* Hero */
+/* ---- */
+
+.hero {
+  width: 100%;
+}
+
+.hero-carousel {
+  width: 100%;
+  position: relative;
+}
+
+.carousel__item {
+  min-width: 320px;
+  width: 100%;
+  position: static;
+  left: -100vw;
+  top: 0;
+  z-index: 1;
+  transition: none;
+}
+
+.now {
+  left: 0;
+  position: relative;
+  transition: 1s;
+}
+
+.post {
+  left: 100vw;
+  transition: 1s;
+}
+
+.carousel__item img {
+  display: block;
+  width: 100%;
+}
+
+.carousel__item p {
+  background: var(--dark-color);
+  color: var(--background-color);
+  padding: 2rem;
+  font-weight: bold;
+}
+
+/* About */
+/* ----- */
+
+.about {
+  display: grid;
+  gap: 2rem;
+}
+
+.about-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.about__item {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.about__item h3 {
+  font-size: 1.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+  }
+}
+
+/* Footer */
+/* ------ */
+
+.footer {
+  width: 100%;
+  background: var(--section-color);
+  text-align: center;
+  display: grid;
+  gap: 4rem;
+}
+
+.footer h3 {
+  font-size: 1.6rem;
+}
