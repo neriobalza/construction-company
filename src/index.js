@@ -4,7 +4,17 @@ const handleMenu = () => {
   window.scrollTo(0, 0);
 };
 
+const handleQuitMenu = () => {
+  document.body.classList.remove("small-body");
+  document.getElementById("menu").classList.remove("menu-active");
+};
+
+const a = document.getElementsByTagName("a");
 document.getElementById("icon-menu").addEventListener("click", handleMenu);
+for (let index = 0; index < a.length; index++) {
+  a[index].addEventListener("click", handleQuitMenu);
+}
+
 // const handleCarousel = () => {
 //   const carouselItems = document.getElementsByClassName("carousel__item");
 //   console.log(carouselPos);
